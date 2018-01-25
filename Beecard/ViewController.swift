@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import WebKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var webView: WKWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        if let url = URL(string: "http://beecard.net") {
+            let request = URLRequest(url: url)
+            webView.load(request)
+        }
     }
 
     override func didReceiveMemoryWarning() {
